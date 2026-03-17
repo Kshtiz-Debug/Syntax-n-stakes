@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Travel and World Discovery - Explore destinations, track journeys, connect with travelers.">
+    <title>Travelyx — Travel & World Discovery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo"><i class="fas fa-globe-americas"></i><span>Trave<span
+                        class="accent">lyx</span></span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link active" data-section="hero"><i class="fas fa-home"></i> Home</a>
+                <a href="#explore" class="nav-link" data-section="explore"><i class="fas fa-compass"></i> Explore</a>
+                <a href="#globe-section" class="nav-link" data-section="globe-section"><i class="fas fa-globe"></i>
+                    Globe</a>
+                <a href="#journey" class="nav-link" data-section="journey"><i class="fas fa-route"></i> Journey</a>
+                <a href="#community" class="nav-link" data-section="community"><i class="fas fa-users"></i>
+                    Community</a>
+                <a href="#wishlist" class="nav-link" data-section="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+            </div>
+            <div class="nav-actions">
+                <div class="user-menu" id="userMenu">
+                    <div class="user-avatar" id="userAvatar"><i class="fas fa-user"></i></div>
+                    <span class="user-name" id="userNameDisplay">User</span>
+                    <button class="logout-btn" id="logoutBtn" title="Sign out"><i
+                            class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </div>
+            <button class="nav-hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="#hero" class="mobile-link">Home</a>
+            <a href="#explore" class="mobile-link">Explore</a>
+            <a href="#globe-section" class="mobile-link">Globe</a>
+            <a href="#journey" class="mobile-link">Journey</a>
+            <a href="#community" class="mobile-link">Community</a>
+            <a href="#wishlist" class="mobile-link">Wishlist</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-shapes">
+            <div class="hero-blob hb-1"></div>
+            <div class="hero-blob hb-2"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-sparkles"></i> Your Travel Companion</div>
+            <h1 class="hero-title"><span class="hero-line animate-text">Travel &</span><span
+                    class="hero-line accent animate-text delay-1">World Discovery</span></h1>
+            <p class="hero-subtitle">Discover breathtaking destinations, track your journeys, share experiences, and
+                connect with travelers around the world.</p>
+            <div class="hero-cta">
+                <a href="#explore" class="btn btn-primary"><i class="fas fa-compass"></i> Explore Now</a>
+                <a href="#globe-section" class="btn btn-outline"><i class="fas fa-globe"></i> View Globe</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><span class="stat-num" data-target="195">0</span><span
+                        class="stat-label">Countries</span></div>
+                <div class="hero-stat"><span class="stat-num" data-target="2500">0</span><span
+                        class="stat-label">Destinations</span></div>
+                <div class="hero-stat"><span class="stat-num" data-target="50000">0</span><span
+                        class="stat-label">Travelers</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-globe-mini">
+                <i class="fas fa-globe-americas"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Section -->
+    <section id="explore" class="section explore-section">
+        <div class="section-container">
+            <div class="section-header"><span class="section-badge"><i class="fas fa-fire"></i> Featured</span>
+                <h2 class="section-title">Explore <span class="accent">Destinations</span></h2>
+                <p class="section-desc">Handpicked places that travelers love. Click to discover more.</p>
+            </div>
+            <div class="destinations-grid" id="destinationsGrid">
+                <div class="dest-card" data-tilt onclick="openDestModal('santorini')">
+                    <div class="dest-img"><img src="images/santorini.png" alt="Santorini" loading="lazy">
+                        <div class="dest-badge">Trending 🔥</div>
+                    </div>
+                    <div class="dest-info">
+                        <h3>Santorini, Greece</h3>
+                        <p>White-washed villages perched on volcanic cliffs with stunning sunsets.</p>
+                        <div class="dest-meta"><span><i class="fas fa-star"></i> 4.9</span><span><i
+                                    class="fas fa-tag"></i> From $1,299</span></div>
+                    </div>
+                </div>
+                <div class="dest-card" data-tilt onclick="openDestModal('tokyo')">
+                    <div class="dest-img"><img src="images/tokyo.png" alt="Tokyo" loading="lazy">
+                        <div class="dest-badge hot">Hot ⚡</div>
+                    </div>
+                    <div class="dest-info">
+                        <h3>Tokyo, Japan</h3>
+                        <p>Ancient temples meet cutting-edge technology in this electrifying city.</p>
+                        <div class="dest-meta"><span><i class="fas fa-star"></i> 4.8</span><span><i
+                                    class="fas fa-tag"></i> From $1,849</span></div>
+                    </div>
+                </div>
+                <div class="dest-card" data-tilt onclick="openDestModal('machupicchu')">
+                    <div class="dest-img"><img src="images/machu_picchu.png" alt="Machu Picchu" loading="lazy">
+                        <div class="dest-badge new">New ✨</div>
+                    </div>
+                    <div class="dest-info">
+                        <h3>Machu Picchu, Peru</h3>
+                        <p>Ancient Incan citadel set high in the Andes, shrouded in mystical clouds.</p>
+                        <div class="dest-meta"><span><i class="fas fa-star"></i> 4.9</span><span><i
+                                    class="fas fa-tag"></i> From $2,199</span></div>
+                    </div>
+                </div>
+                <div class="dest-card" data-tilt onclick="openDestModal('iceland')">
+                    <div class="dest-img"><img src="images/iceland.png" alt="Iceland" loading="lazy">
+                        <div class="dest-badge">Trending 🔥</div>
+                    </div>
+                    <div class="dest-info">
+                        <h3>Reykjavik, Iceland</h3>
+                        <p>Witness the Northern Lights dance across glacial landscapes of fire and ice.</p>
+                        <div class="dest-meta"><span><i class="fas fa-star"></i> 4.7</span><span><i
+                                    class="fas fa-tag"></i> From $1,599</span></div>
+                    </div>
+                </div>
+                <div class="dest-card" data-tilt onclick="openDestModal('maldives')">
+                    <div class="dest-img"><img src="images/maldives.png" alt="Maldives" loading="lazy">
+                        <div class="dest-badge hot">Hot ⚡</div>
+                    </div>
+                    <div class="dest-info">
+                        <h3>Malé, Maldives</h3>
+                        <p>Crystal-clear waters, overwater villas, and pristine beaches paradise.</p>
+                        <div class="dest-meta"><span><i class="fas fa-star"></i> 5.0</span><span><i
+                                    class="fas fa-tag"></i> From $2,899</span></div>
+                    </div>
+                </div>
+                <div class="dest-card" data-tilt onclick="openDestModal('dubai')">
+                    <div class="dest-img"><img src="images/dubai.png" alt="Dubai" loading="lazy">
+                        <div class="dest-badge new">New ✨</div>
+                    </div>
+                    <div class="dest-info">
+                        <h3>Dubai, UAE</h3>
+                        <p>Ultramodern skyscrapers, luxury shopping, and golden desert adventures.</p>
+                        <div class="dest-meta"><span><i class="fas fa-star"></i> 4.8</span><span><i
+                                    class="fas fa-tag"></i> From $1,749</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Globe Section -->
+    <section id="globe-section" class="section globe-section">
+        <div class="section-container">
+            <div class="section-header"><span class="section-badge"><i class="fas fa-satellite"></i> Interactive</span>
+                <h2 class="section-title">World <span class="accent">Globe</span></h2>
+                <p class="section-desc">Click on any glowing marker to see trip details, routes, and travel info.</p>
+            </div>
+            <div class="globe-layout">
+                <div class="globe-wrapper">
+                    <div class="globe-cursor" id="globeCursor"></div>
+                    <canvas id="globeCanvas"></canvas>
+                </div>
+                <div class="globe-sidebar">
+                    <div class="globe-info-card card" id="globeInfoCard">
+                        <div class="card-header"><i class="fas fa-crosshairs pulse-icon"></i>
+                            <h3>Destination Details</h3>
+                        </div>
+                        <div class="card-body" id="locationInfo">
+                            <div class="info-placeholder"><i class="fas fa-hand-pointer"></i>
+                                <p>Click a glowing marker on the globe to see trip info for that destination</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="globe-legend card">
+                        <div class="card-header"><i class="fas fa-list"></i>
+                            <h3>Map Legend</h3>
+                        </div>
+                        <div class="legend-items">
+                            <div class="legend-item"><span class="legend-dot"
+                                    style="background:#4facfe;"></span><span>Popular Destinations</span></div>
+                            <div class="legend-item"><span class="legend-dot"
+                                    style="background:#7c6fff;"></span><span>Hidden Gems</span></div>
+                            <div class="legend-item"><span class="legend-dot"
+                                    style="background:#ff9e6d;"></span><span>Trending Now</span></div>
+                            <div class="legend-item"><span class="legend-dot pulsing"
+                                    style="background:#a8edea;"></span><span>Your Location</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline Section -->
+    <section id="journey" class="section journey-section">
+        <div class="section-container">
+            <div class="section-header"><span class="section-badge"><i class="fas fa-route"></i> Timeline</span>
+                <h2 class="section-title">Journey <span class="accent">So Far</span></h2>
+                <p class="section-desc">Your travel timeline — every adventure, every memory.</p>
+            </div>
+            <div class="timeline" id="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item left reveal">
+                    <div class="timeline-dot"><i class="fas fa-plane"></i></div>
+                    <div class="timeline-card card">
+                        <div class="timeline-date">March 2026</div>
+                        <h3>Paris, France</h3>
+                        <p>Explored the Eiffel Tower, strolled along the Seine, and savored authentic croissants at a
+                            hidden café.</p>
+                        <div class="timeline-tags"><span>Culture</span><span>Food</span><span>Romance</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item right reveal">
+                    <div class="timeline-dot"><i class="fas fa-mountain"></i></div>
+                    <div class="timeline-card card">
+                        <div class="timeline-date">January 2026</div>
+                        <h3>Swiss Alps</h3>
+                        <p>Skiing through pristine powder snow with breathtaking mountain panoramas at every turn.</p>
+                        <div class="timeline-tags"><span>Adventure</span><span>Snow</span><span>Nature</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item left reveal">
+                    <div class="timeline-dot"><i class="fas fa-umbrella-beach"></i></div>
+                    <div class="timeline-card card">
+                        <div class="timeline-date">November 2025</div>
+                        <h3>Bali, Indonesia</h3>
+                        <p>Sunset yoga on the beach, ancient temple visits, and diving into crystal-clear waters.</p>
+                        <div class="timeline-tags"><span>Beach</span><span>Spiritual</span><span>Diving</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item right reveal">
+                    <div class="timeline-dot"><i class="fas fa-torii-gate"></i></div>
+                    <div class="timeline-card card">
+                        <div class="timeline-date">September 2025</div>
+                        <h3>Kyoto, Japan</h3>
+                        <p>Walking through thousands of vermillion torii gates at Fushimi Inari and tea ceremonies.</p>
+                        <div class="timeline-tags"><span>Culture</span><span>History</span><span>Zen</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="section community-section">
+        <div class="section-container">
+            <div class="section-header"><span class="section-badge"><i class="fas fa-users"></i> Social</span>
+                <h2 class="section-title">Travel <span class="accent">Community</span></h2>
+                <p class="section-desc">Share your stories, discover adventures, and connect with fellow travelers.</p>
+            </div>
+            <!-- New Post -->
+            <div class="new-post-card card" id="newPostCard">
+                <div class="new-post-header">
+                    <div class="post-avatar"><i class="fas fa-user"></i></div>
+                    <input type="text" class="post-input" id="newPostInput" placeholder="Share your travel story...">
+                </div>
+                <div class="new-post-actions">
+                    <button class="post-action-btn"><i class="fas fa-image"></i> Photo</button>
+                    <button class="post-action-btn"><i class="fas fa-map-marker-alt"></i> Location</button>
+                    <button class="post-action-btn"><i class="fas fa-smile"></i> Feeling</button>
+                    <button class="btn btn-primary btn-sm" id="publishPostBtn" onclick="publishPost()">Post</button>
+                </div>
+            </div>
+            <!-- Community Feed -->
+            <div class="community-feed" id="communityFeed">
+                <div class="feed-post card reveal">
+                    <div class="post-header">
+                        <div class="post-avatar-img" style="background:linear-gradient(135deg,#4facfe,#0077b6);"><i
+                                class="fas fa-user"></i></div>
+                        <div class="post-user-info"><strong>Sarah Chen</strong><span>3 hours ago · Santorini,
+                                Greece</span></div>
+                    </div>
+                    <p class="post-text">Just watched the most incredible sunset from Oia! The colors were absolutely
+                        unreal. Santorini, you have my heart forever 💙🇬🇷</p>
+                    <div class="post-image"><img src="images/santorini.png" alt="Santorini sunset" loading="lazy"></div>
+                    <div class="post-reactions"><button class="react-btn" onclick="toggleLike(this)"><i
+                                class="far fa-heart"></i> <span>124</span></button><button class="react-btn"><i
+                                class="far fa-comment"></i> <span>18</span></button><button class="react-btn"><i
+                                class="far fa-share-square"></i> <span>Share</span></button></div>
+                </div>
+                <div class="feed-post card reveal">
+                    <div class="post-header">
+                        <div class="post-avatar-img" style="background:linear-gradient(135deg,#ff9e6d,#ff7eb3);"><i
+                                class="fas fa-user"></i></div>
+                        <div class="post-user-info"><strong>Alex Rivera</strong><span>Yesterday · Tokyo, Japan</span>
+                        </div>
+                    </div>
+                    <p class="post-text">Tokyo at night is like stepping into a cyberpunk movie. The energy, the food,
+                        the culture — it's overwhelming in the best way possible! 🗼🍣</p>
+                    <div class="post-image"><img src="images/tokyo.png" alt="Tokyo night" loading="lazy"></div>
+                    <div class="post-reactions"><button class="react-btn" onclick="toggleLike(this)"><i
+                                class="far fa-heart"></i> <span>256</span></button><button class="react-btn"><i
+                                class="far fa-comment"></i> <span>42</span></button><button class="react-btn"><i
+                                class="far fa-share-square"></i> <span>Share</span></button></div>
+                </div>
+                <div class="feed-post card reveal">
+                    <div class="post-header">
+                        <div class="post-avatar-img" style="background:linear-gradient(135deg,#a8edea,#90e0ef);"><i
+                                class="fas fa-user"></i></div>
+                        <div class="post-user-info"><strong>Maya Patel</strong><span>2 days ago · Maldives</span></div>
+                    </div>
+                    <p class="post-text">Woke up to this view from our overwater villa. The water is so clear you can
+                        see fish swimming below! Paradise found 🌊🐠✨</p>
+                    <div class="post-image"><img src="images/maldives.png" alt="Maldives" loading="lazy"></div>
+                    <div class="post-reactions"><button class="react-btn" onclick="toggleLike(this)"><i
+                                class="far fa-heart"></i> <span>389</span></button><button class="react-btn"><i
+                                class="far fa-comment"></i> <span>67</span></button><button class="react-btn"><i
+                                class="far fa-share-square"></i> <span>Share</span></button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dream Destinations / Wishlist -->
+    <section id="wishlist" class="section wishlist-section">
+        <div class="section-container">
+            <div class="section-header"><span class="section-badge"><i class="fas fa-heart"></i> Wishlist</span>
+                <h2 class="section-title">Dream <span class="accent">Destinations</span></h2>
+                <p class="section-desc">Save the places you dream of visiting. Your future adventures start here.</p>
+            </div>
+            <div class="wishlist-add card">
+                <input type="text" id="wishlistInput" placeholder="Add a dream destination..." class="wishlist-input">
+                <button class="btn btn-primary btn-sm" onclick="addWishlistItem()"><i class="fas fa-plus"></i>
+                    Add</button>
+            </div>
+            <div class="wishlist-grid" id="wishlistGrid">
+                <div class="wishlist-card card reveal">
+                    <div class="wishlist-icon" style="background:linear-gradient(135deg,#4facfe,#0077b6);"><i
+                            class="fas fa-torii-gate"></i></div>
+                    <div class="wishlist-info">
+                        <h4>Kyoto, Japan</h4>
+                        <p>Cherry blossoms & ancient temples</p>
+                    </div>
+                    <button class="wishlist-remove" onclick="this.closest('.wishlist-card').remove()"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <div class="wishlist-card card reveal">
+                    <div class="wishlist-icon" style="background:linear-gradient(135deg,#ff9e6d,#ff7eb3);"><i
+                            class="fas fa-monument"></i></div>
+                    <div class="wishlist-info">
+                        <h4>Petra, Jordan</h4>
+                        <p>The lost city carved in stone</p>
+                    </div>
+                    <button class="wishlist-remove" onclick="this.closest('.wishlist-card').remove()"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <div class="wishlist-card card reveal">
+                    <div class="wishlist-icon" style="background:linear-gradient(135deg,#a8edea,#90e0ef);"><i
+                            class="fas fa-water"></i></div>
+                    <div class="wishlist-info">
+                        <h4>Galápagos Islands</h4>
+                        <p>Wildlife paradise in the Pacific</p>
+                    </div>
+                    <button class="wishlist-remove" onclick="this.closest('.wishlist-card').remove()"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <div class="wishlist-card card reveal">
+                    <div class="wishlist-icon" style="background:linear-gradient(135deg,#d9d4ff,#7c6fff);"><i
+                            class="fas fa-mountain"></i></div>
+                    <div class="wishlist-info">
+                        <h4>Patagonia, Chile</h4>
+                        <p>Untamed wilderness at the end of the world</p>
+                    </div>
+                    <button class="wishlist-remove" onclick="this.closest('.wishlist-card').remove()"><i
+                            class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Profile Section -->
+    <section id="profile" class="section profile-section">
+        <div class="section-container">
+            <div class="profile-card card">
+                <div class="profile-header">
+                    <div class="profile-avatar"><i class="fas fa-user"></i></div>
+                    <div class="profile-info">
+                        <h2 id="profileName">Traveler</h2>
+                        <p id="profileEmail">traveler@travelyx.com</p><span class="profile-since"
+                            id="profileSince">Member since 2026</span>
+                    </div>
+                </div>
+                <div class="profile-stats-grid">
+                    <div class="profile-stat"><i class="fas fa-map-marker-alt"></i><strong>12</strong><span>Places
+                            Visited</span></div>
+                    <div class="profile-stat"><i class="fas fa-heart"></i><strong>4</strong><span>Dream
+                            Destinations</span></div>
+                    <div class="profile-stat"><i class="fas fa-camera"></i><strong>36</strong><span>Stories
+                            Shared</span></div>
+                    <div class="profile-stat"><i class="fas fa-users"></i><strong>128</strong><span>Connections</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand"><a href="#" class="footer-logo"><i
+                            class="fas fa-globe-americas"></i><span>Trave<span class="accent">lyx</span></span></a>
+                    <p>Explore beyond horizons. Discover the extraordinary.</p>
+                    <div class="footer-socials"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a><a
+                            href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#"
+                            class="social-link"><i class="fab fa-youtube"></i></a></div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Explore</h4><a href="#">Destinations</a><a href="#">Travel Guides</a><a href="#">Hidden
+                            Gems</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4><a href="#">About Us</a><a href="#">Careers</a><a href="#">Blog</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4><a href="#">Help Center</a><a href="#">Contact</a><a href="#">Privacy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Travelyx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Destination Modal -->
+    <div class="modal-overlay" id="destModal">
+        <div class="modal-card card">
+            <button class="modal-close" onclick="closeDestModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-img" id="modalImg"></div>
+            <div class="modal-body">
+                <h2 id="modalTitle"></h2>
+                <p class="modal-loc" id="modalLoc"></p>
+                <p id="modalDesc"></p>
+                <div class="modal-details">
+                    <div class="modal-detail"><i class="fas fa-thermometer-half"></i><span id="modalTemp"></span></div>
+                    <div class="modal-detail"><i class="fas fa-clock"></i><span id="modalTime"></span></div>
+                    <div class="modal-detail"><i class="fas fa-language"></i><span id="modalLang"></span></div>
+                </div>
+                <button class="btn btn-primary" onclick="closeDestModal()"><i class="fas fa-suitcase-rolling"></i> Book
+                    This Trip</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
