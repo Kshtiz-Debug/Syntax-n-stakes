@@ -1,2 +1,3 @@
 # Syntax-n-stakes
-ff
+Build for the hackathon for 2nd round 
+Deployed on vercel...
